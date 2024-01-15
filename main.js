@@ -1,5 +1,5 @@
-document.addEventListener("DOMContentLoaded", function (event) {
-  document.getElementById("Swap").addEventListener("click", function (){
-
-  });
-});
+var words = [];
+for (var i = 0; i < 3; i++){
+  words.push(prompt("Enter a word please,"));
+}
+alert(words);
