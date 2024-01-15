@@ -6,18 +6,14 @@ for (var i = 0; i < 3; i++){
 
 addToList("list1", wordArr);
 
-// reverse words and add to second list
-var newWordArr = [];
-for (var t = 0; t < wordArr.length; t++){
-  newWordArr.push(reverseString(wordArr[t]));
-}
+var newWordArr = wordArr.map(swapString);
 
 addToList("list2", newWordArr);
 
 // Functions
 function addToList(l, a){
   /* Function to add array items to a list
-     inputs: list ID & array */
+     input: list ID & array */
   for(var j = 0; j < a.length; j++){
     var entry = document.createElement("LI");
     var word = document.createTextNode(a[j]);
@@ -26,11 +22,14 @@ function addToList(l, a){
   }
 }
 
-function reverseString(str) {
+function swapString(s) {
   /* Function reverse a string by splitting it into an array, 
-     reverseing the array, and rejoining the array */
-  var splitWord = str.split("");
-  var revWord = splitWord.reverse();
-  var newWord = revWord.join("");
+     swapping the first & last elements in the array, 
+     and recombining the array */
+  var splitWord = s.split("");  
+  var temp = splitWord[0];
+  splitWord[0] = splitWord[splitWord.length - 1];
+  splitWord[splitWord.length - 1] = temp; 
+  var newWord = splitWord.join("");
   return newWord;
 }
