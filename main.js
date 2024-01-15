@@ -23,7 +23,7 @@ function addToList(l, a){
 }
 
 function swapString(s) {
-  /* Function reverse a string by splitting it into an array, 
+  /* Function swap parts of a string by splitting it into an array, 
      swapping the first & last elements in the array, 
      and recombining the array */
   var splitWord = s.split("");  
