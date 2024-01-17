@@ -11,6 +11,11 @@ var newWordArr = wordArr.map(swapString);
 // Adds functionality to the Swap button
 var button = document.getElementById("Swap");
 button.addEventListener("click", function(){
+  var title = document.getElementById("title");
+  var words = document.createTextNode("1st last letters swapped");
+  title.append(words);
+  document.getElementById("Hidden1").remove();
+  document.getElementById("Swap").remove();
   addToList("list2", newWordArr);
 });
 
