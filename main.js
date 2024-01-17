@@ -8,14 +8,18 @@ addToList("list1", wordArr);
 
 var newWordArr = wordArr.map(swapString);
 
-addToList("list2", newWordArr);
+// Adds functionality to the Swap button
+var button = document.getElementById("Swap");
+button.addEventListener("click", function(){
+  addToList("list2", newWordArr);
+});
 
 // Functions
 function addToList(l, a){
   /* Function to add array items to a list
      input: list ID & array */
   for(var j = 0; j < a.length; j++){
-    var entry = document.createElement("LI");
+    var entry = document.createElement("li");
     var word = document.createTextNode(a[j]);
     entry.append(word);
     document.getElementById(l).appendChild(entry);
